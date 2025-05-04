@@ -1,3 +1,4 @@
+package com.joaot.codigomorse;
 // Classe Node com letra e filhos left/right
 public class Node {
     public char letra;

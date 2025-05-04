@@ -1,3 +1,5 @@
+package com.joaot.codigomorse;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -76,5 +78,20 @@ public class MorseBST {
             }
         }
         return resultado.toString().trim();
+    }
+
+    // NOVO MÉTODO para exibir a árvore em ordem (in-order)
+    public String imprimirEmOrdem() {
+        StringBuilder sb = new StringBuilder();
+        imprimirEmOrdem(root, sb);
+        return sb.toString();
+    }
+
+    private void imprimirEmOrdem(Node node, StringBuilder sb) {
+        if (node != null) {
+            imprimirEmOrdem(node.left, sb);
+            if (node.letra != ' ') sb.append(node.letra).append(" ");
+            imprimirEmOrdem(node.right, sb);
+        }
     }
 }
